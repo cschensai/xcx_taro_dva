@@ -18,7 +18,7 @@ const indexTep = `
 import React, { Component } from 'react'
 import { View } from '@tarojs/components'
 import { connect } from 'react-redux'
-import './${index}.less'
+import './index.less'
 
 @connect(({ ${dirName} }) => ({
     ...${dirName},
