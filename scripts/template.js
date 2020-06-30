@@ -16,12 +16,8 @@ const capPirName = dirName.substring(0, 1).toUpperCase() + dirName.substring(1);
 const indexTep = `
 import React, { Component } from 'react'
 import { View } from '@tarojs/components'
-import { connect } from 'react-redux'
 import './index.less'
 
-@connect(({ ${dirName} }) => ({
-    ...${dirName},
-}))
 
 class ${capPirName} extends Component {
   config = {
@@ -62,57 +58,12 @@ export default {
   navigationBarTitleText: 'xx'
 }
 `
-// 接口请求模板
-const serviceTep = `
-import Api from '../../utils/request'
 
-export const testApi = data => Api.test(
-  data
-)
-`
-
-//model模板
-
-const modelTep = `
-// import Taro from '@tarojs/taro';
-import * as ${dirName}Api from './service';
-
-export default {
-  namespace: '${dirName}',
-  state: {
-  },
-
-  effects: {},
-
-  reducers: {}
-
-}
-`
-
-const interfaceTep = `
-/**
- * ${dirName}.state 参数类型
- *
- * @export
- * @interface ${capPirName}State
- */
-export interface ${capPirName}State {}
-
-/**
- * ${dirName}.props 参数类型
- *
- * @export
- * @interface ${capPirName}Props
- */
-export interface ${capPirName}Props {}
-`
 
 fs.mkdirSync(`./src/pages/${dirName}`); // mkdir $1
 process.chdir(`./src/pages/${dirName}`); // cd $1
 
 fs.writeFileSync(`index.jsx`, indexTep); //tsx
-fs.writeFileSync(`index.less`, lessTep); // scss
+fs.writeFileSync(`index.less`, lessTep); // less
 fs.writeFileSync('index.config.js', configTep); // config
-fs.writeFileSync('service.js', serviceTep); // service
-fs.writeFileSync('model.js', modelTep); // model
 process.exit(0);
