@@ -89,24 +89,6 @@ export default {
 }
 `
 
-const interfaceTep = `
-/**
- * ${dirName}.state 参数类型
- *
- * @export
- * @interface ${capPirName}State
- */
-export interface ${capPirName}State {}
-
-/**
- * ${dirName}.props 参数类型
- *
- * @export
- * @interface ${capPirName}Props
- */
-export interface ${capPirName}Props {}
-`
-
 fs.mkdirSync(`./src/pages/${dirName}`); // mkdir $1
 process.chdir(`./src/pages/${dirName}`); // cd $1
 
