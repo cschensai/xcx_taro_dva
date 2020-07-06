@@ -46,7 +46,7 @@ export default ${capPirName}
 
 // scss文件模版
 const scssTep = `
-${dirName}-wrap {
+.${dirName} {
     width: 100%;
     min-height: 100vh;
 }
