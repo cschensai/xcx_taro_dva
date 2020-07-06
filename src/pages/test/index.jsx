@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { View } from '@tarojs/components'
 import { connect } from 'react-redux'
-import './index.less'
+import styles from  './index.scss';
 
 @connect(({ test }) => ({
     ...test,
@@ -23,7 +23,7 @@ class Test extends Component {
 
   render() {
     return (
-      <View className='test-wrap'>
+      <View className={styles['test-wrap']}>
           test
       </View>
     )

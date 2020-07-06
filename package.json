@@ -6,7 +6,7 @@
   "templateInfo": {
     "name": "default",
     "typescript": false,
-    "css": "less"
+    "css": "sass"
   },
   "scripts": {
     "start": "npm run dev:weapp",
@@ -47,7 +47,8 @@
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "taro-ui": "^3.0.0-alpha.2"
   },
   "devDependencies": {
     "@types/webpack-env": "^1.13.6",

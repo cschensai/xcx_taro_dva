@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { View, Text, Button } from '@tarojs/components'
+import { View, Text } from '@tarojs/components'
+import { AtButton } from 'taro-ui'
 import { connect } from 'react-redux';
 import taroRequest from '../../utils/request';
-import './index.less'
+import styles from './index.scss';
 
 @connect(({ index }) => {
   return {
@@ -41,9 +42,9 @@ export default class Index extends Component {
   }
   render () {
     return (
-      <View className='index'>
+      <View className={styles.index}>
         <Text onClick={this.handleAdd}>Hello world!{ this.props.count }</Text>
-        <Button type="primary" onClick onClick={this.handleNavigate}>跳转测试页面</Button>
+        <AtButton type="primary" onClick={this.handleNavigate}>跳转测试页面</AtButton>
       </View>
     )
   }
