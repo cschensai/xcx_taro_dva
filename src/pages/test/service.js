@@ -1,6 +1,10 @@
 
-import Api from '../../utils/request'
+import taroRequest from '../../utils/request'
 
-export const testApi = data => Api.test(
-  data
-)
+export function getFun(data) {
+  return taroRequest({
+    url: '/',
+    method: 'GET',
+    data,
+  })
+}

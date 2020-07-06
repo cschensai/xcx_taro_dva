@@ -17,7 +17,7 @@ const indexTep = `
 import React, { Component } from 'react'
 import { View } from '@tarojs/components'
 import { connect } from 'react-redux'
-import './index.less'
+import styles from './index.scss'
 
 @connect(({ ${dirName} }) => ({
     ...${dirName},
@@ -38,7 +38,7 @@ class ${capPirName} extends Component {
 
   render() {
     return (
-      <View className='${dirName}-wrap'>
+      <View className={styles.${dirName}}>
           
       </View>
     )
@@ -48,9 +48,9 @@ class ${capPirName} extends Component {
 export default ${capPirName}
 `
 
-// less文件模版
-const lessTep = `
-${dirName}-wrap {
+// scss文件模版
+const scssTep = `
+.${dirName} {
     width: 100%;
     min-height: 100vh;
 }
@@ -64,11 +64,15 @@ export default {
 `
 // 接口请求模板
 const serviceTep = `
-import Api from '../../utils/request'
+import taroRequest from '../../utils/request'
 
-export const testApi = data => Api.test(
-  data
-)
+export function getFun(data) {
+  return taroRequest({
+    url: '/',
+    method: 'GET',
+    data,
+  })
+}
 `
 
 //model模板
@@ -93,7 +97,7 @@ fs.mkdirSync(`./src/pages/${dirName}`); // mkdir $1
 process.chdir(`./src/pages/${dirName}`); // cd $1
 
 fs.writeFileSync(`index.jsx`, indexTep); //tsx
-fs.writeFileSync(`index.less`, lessTep); // scss
+fs.writeFileSync(`index.scss`, scssTep); // scss
 fs.writeFileSync('index.config.js', configTep); // config
 fs.writeFileSync('service.js', serviceTep); // service
 fs.writeFileSync('model.js', modelTep); // model

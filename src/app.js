@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import dva from './utils/dva';
 import models from './models';
 // 全局引入样式
-import "taro-ui/dist/style/index.scss";
+import 'taro-ui/dist/style/index.scss';
 import './app.scss';
 
 const dvaApp = dva.createApp({
