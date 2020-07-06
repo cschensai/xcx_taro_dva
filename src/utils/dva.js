@@ -3,12 +3,15 @@ import { createLogger } from 'redux-logger';
 import { create } from 'dva-core';
 // dva-loading：管理页面的loading状态
 import createLoading from 'dva-loading';
+import { IS_SHOW_REDUX_LOGGER } from '../config/config';
 
 let app, store, dispatch, registered;
 
-function createApp(opt) {
+function createApp(opt = {}) {
   // redux日志
-  opt.onAction = [createLogger()];
+  if (IS_SHOW_REDUX_LOGGER) {
+    opt.onAction = [createLogger()];
+  }
   app = create(opt);
   // laoding中间件
   app.use(createLoading({}));
