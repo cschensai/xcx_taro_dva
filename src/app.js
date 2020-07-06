@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import dva from './utils/dva';
 import models from './models';
-// 全局引入样式
+// 全局引入样式(只能在app.js中引入)
 import 'taro-ui/dist/style/index.scss';
 import './app.scss';
 
