@@ -1,5 +1,9 @@
-// import Api from '../../utils/request'
+import taroRequest from '../../utils/request'
 
-// export const getLists = (data) => {
-//   return Api.getLists(data)
-// }
+export function getFun(data) {
+  return taroRequest({
+    url: '/',
+    method: 'GET',
+    data,
+  })
+}
