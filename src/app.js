@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './app.less';
+// 全局引入样式(智能在js中引入)
+import 'taro-ui/dist/style/index.scss';
+import './app.scss';
 
 
 class App extends Component {

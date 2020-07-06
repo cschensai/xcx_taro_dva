@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { View, Text, Button } from '@tarojs/components'
-import './index.less'
+import { View } from '@tarojs/components'
+import { AtButton } from 'taro-ui';
+import styles from './index.scss';
 
 export default class Index extends Component {
 
   componentWillMount () { }
-  async componentWillMount () {
-    const res = await taroRequest({
-      url: '/',
-    })
-    console.log('res请求结果', res);
-  }
 
   componentDidMount () { }
 
@@ -22,14 +17,14 @@ export default class Index extends Component {
   componentDidHide () { }
 
   handleNavigate = () => {
-    Taro.navigateTo({
-      url: '/pages/test/index'
-    });
+    Taro.showToast({
+      title: '测试'
+    })
   }
   render () {
     return (
-      <View className='index'>
-        <Button type="primary" onClick onClick={this.handleNavigate}>跳转测试页面</Button>
+      <View className={styles.index}>
+        <AtButton type="primary" onClick onClick={this.handleNavigate}>跳转测试页面</AtButton>
       </View>
     )
   }

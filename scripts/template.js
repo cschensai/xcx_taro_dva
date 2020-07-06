@@ -16,7 +16,7 @@ const capPirName = dirName.substring(0, 1).toUpperCase() + dirName.substring(1);
 const indexTep = `
 import React, { Component } from 'react'
 import { View } from '@tarojs/components'
-import './index.less'
+import styles from './index.scss'
 
 
 class ${capPirName} extends Component {
@@ -34,7 +34,7 @@ class ${capPirName} extends Component {
 
   render() {
     return (
-      <View className='${dirName}-wrap'>
+      <View className={styles.${dirName}}>
           
       </View>
     )
@@ -44,8 +44,8 @@ class ${capPirName} extends Component {
 export default ${capPirName}
 `
 
-// less文件模版
-const lessTep = `
+// scss文件模版
+const scssTep = `
 ${dirName}-wrap {
     width: 100%;
     min-height: 100vh;
@@ -64,6 +64,6 @@ fs.mkdirSync(`./src/pages/${dirName}`); // mkdir $1
 process.chdir(`./src/pages/${dirName}`); // cd $1
 
 fs.writeFileSync(`index.jsx`, indexTep); //tsx
-fs.writeFileSync(`index.less`, lessTep); // less
+fs.writeFileSync(`index.scss`, scssTep); // less
 fs.writeFileSync('index.config.js', configTep); // config
 process.exit(0);
