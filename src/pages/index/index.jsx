@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
 import { connect } from 'react-redux';
+import taroRequest from '../../utils/request';
 import './index.less'
 
 @connect(({ index }) => {
@@ -12,7 +13,12 @@ import './index.less'
 
 export default class Index extends Component {
 
-  componentWillMount () { }
+  async componentWillMount () {
+    const res = await taroRequest({
+      url: '/',
+    })
+    console.log(222, res);
+  }
 
   componentDidMount () { }
 
