@@ -14,6 +14,7 @@ async function taroRequest({ url, method = 'GET', data = {} }) {
     timeout: 6000,
     dataType: 'json',
   })
+  // 对结果统一处理
   const { statusCode, data: resData, errMsg } = res || {};
   if (statusCode === 200) return resData;
   throw new Error(`网络请求错误，状态码${statusCode}，${errMsg}`);

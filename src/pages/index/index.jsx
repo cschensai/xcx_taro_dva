@@ -10,7 +10,7 @@ export default class Index extends Component {
     const res = await taroRequest({
       url: '/',
     })
-    console.log(222, res);
+    console.log('res请求结果', res);
   }
 
   componentDidMount () { }
