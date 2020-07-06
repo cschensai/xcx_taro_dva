@@ -6,6 +6,12 @@ import './index.less'
 export default class Index extends Component {
 
   componentWillMount () { }
+  async componentWillMount () {
+    const res = await taroRequest({
+      url: '/',
+    })
+    console.log(222, res);
+  }
 
   componentDidMount () { }
 
