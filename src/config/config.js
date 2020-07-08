@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:7002';
+const BASE_URL = 'https://api-plus.lhbgame.com/Promotion/getTabList';
 // 是否在控制台需要展示redux log信息
 const IS_SHOW_REDUX_LOGGER = true;
 

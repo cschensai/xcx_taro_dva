@@ -1,18 +1,20 @@
-// import Taro from '@tarojs/taro';
-// import * as indexApi from './service';
+import { getFun } from "./service";
 
 export default {
   namespace: 'index',
   state: {
-    count: 1,
+    data: null,
   },
 
   effects: {
-    * addCount({ payload }, { call, put }) {
+    * getData({ payload, cb }, { call, put }) {
+      const res = yield call(getFun, payload);
+      const { info = {} } = res || {};
+      cb && cb();
       yield put({
         type: 'updateState',
         payload: {
-          count: payload,
+          data: info.data,
         }
       })
     }

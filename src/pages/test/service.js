@@ -1,5 +1,5 @@
 
-import taroRequest from '../../utils/request'
+import taroRequest from '../../utils/request';
 
 export function getFun(data) {
   return taroRequest({
