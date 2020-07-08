@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro';
-const DURATION = 1000; // 1500ms
+const DURATION = 1000; // 1000ms
 
 class Tips {
   // 信息提示
