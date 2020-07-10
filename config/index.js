@@ -63,6 +63,18 @@ const config = {
     },
     // 由于引用 `node_modules` 的模块，默认不会编译，所以需要额外给 H5 配置 `esnextModules`
     esnextModules: ['taro-ui'],
+    // 解决跨域
+    devServer: {
+      host: 'localhost', // 默认是0.0.0.0
+      port: 8888, // 默认是10086
+      // proxy: {
+      //   '/': {
+      //     target: 'http://172.16.22.152:7002',
+      //     secure: false,
+      //     changeOrigin: true,
+      //   }
+      // }
+    },
   }
 }
 
