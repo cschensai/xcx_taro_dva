@@ -2,6 +2,7 @@
 import Taro from '@tarojs/taro';
 import { BASE_URL } from '../config/config';
 
+let tempRes = {};
 async function taroRequest({ url, method = 'GET', data = {} }) {
   try {
     // 对响应结果，添加拦截器chuloi
@@ -9,7 +10,14 @@ async function taroRequest({ url, method = 'GET', data = {} }) {
       return chain.proceed(chain.requestParams).then(res => {
         // 对结果统一处理
         const { statusCode, data: resData, errMsg } = res || {};
-        if (statusCode === 200) return resData;
+        if (statusCode === 200) {
+          tempRes = resData;
+          return resData;
+        }
+        // 处理页面跳转时，拦截器执行两次的问题
+        if (statusCode === undefined) {
+           return tempRes;
+        }
         throw new Error(`网络请求错误，状态码${statusCode}，${errMsg}`);
       })
     });
