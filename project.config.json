@@ -1,8 +1,8 @@
 {
 	"miniprogramRoot": "dist/",
 	"projectname": "xcx_client_dva",
-	"description": "wxbc24627c306c22bb",
-	"appid": "touristappid",
+	"description": "",
+	"appid": "wxbc24627c306c22bb",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
